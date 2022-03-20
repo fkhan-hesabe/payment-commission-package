@@ -1,0 +1,53 @@
+{
+    "name": "hesabe/payment-commission",
+    "description": "Package to calculate commission for a Merchant during a transaction",
+    "keywords": [
+        "hesabe",
+        "payment-commission"
+    ],
+    "homepage": "https://github.com/hesabe/payment-commission",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Fahad Khan",
+            "email": "fkhan@hesabe.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "5.1.x|^6.0|^7.0|^8.0|^9.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "4.8|^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Hesabe\\PaymentCommission\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Hesabe\\PaymentCommission\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Hesabe\\PaymentCommission\\PaymentCommissionServiceProvider"
+            ],
+            "aliases": {
+                "PaymentCommission": "Hesabe\\PaymentCommission\\PaymentCommissionFacade"
+            }
+        }
+    }
+}
